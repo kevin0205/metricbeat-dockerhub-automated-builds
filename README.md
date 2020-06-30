@@ -4,4 +4,4 @@ Test DockerHub Automated Builds
 2. Use Docker Buildx  
 3. Use DockerHub Automated Builds
 4. Build Multi Architecture Docker Image (amd64 / arm64)  
-5. Auto Push Docker Hub  
+5. Auto Push DockerHub  
