@@ -6,7 +6,7 @@ env TARGET_ARCH=linux/amd64,linux/arm64
 env TARGET_VERSION=7.5.2
 
 apt-get update
-apt-get install wget
+apt-get install wget sudo
 #curl -fsSL https://get.docker.com | sh
 apt-get remove docker docker-engine docker.io containerd runc
 apt-get install -y \
