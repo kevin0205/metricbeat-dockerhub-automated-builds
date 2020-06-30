@@ -7,7 +7,7 @@ env TARGET_VERSION=7.5.2
 
 apt-get update
 apt-get install wget sudo
-#curl -fsSL https://get.docker.com | sh
+curl -fsSL https://get.docker.com | sh
 #apt-get remove docker docker-engine docker.io containerd runc
 #apt-get install -y \
 #    apt-transport-https \
@@ -15,8 +15,8 @@ apt-get install wget sudo
 #    curl \
 #    gnupg-agent \
 #    software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-apt-key fingerprint 0EBFCD88
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#apt-key fingerprint 0EBFCD88
 #add-apt-repository \
 #   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
 #   $(lsb_release -cs) \
