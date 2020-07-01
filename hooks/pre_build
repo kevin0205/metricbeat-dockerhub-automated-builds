@@ -6,10 +6,20 @@ env TARGET_ARCH=linux/amd64,linux/arm64
 env TARGET_VERSION=7.5.2
 
 apt-get update -y
-apt-get install -y --install-recommends linux-generic-hwe-16.04
+
+#apt-get install -y --install-recommends linux-generic-hwe-16.04
 apt-get install -y wget sudo
-reboot
 #apt-get install -y qemu qemu-system-misc qemu-user-static qemu-user binfmt-support
+apt-get install git libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev
+apt-get install git-email
+apt-get install libaio-dev libbluetooth-dev libbrlapi-dev libbz2-dev
+apt-get install libcap-dev libcap-ng-dev libcurl4-gnutls-dev libgtk-3-dev
+apt-get install libibverbs-dev libjpeg8-dev libncurses5-dev libnuma-dev
+apt-get install librbd-dev librdmacm-dev
+apt-get install libsasl2-dev libsdl1.2-dev libseccomp-dev libsnappy-dev libssh2-1-dev
+apt-get install libvde-dev libvdeplug-dev libvte-2.90-dev libxen-dev liblzo2-dev
+apt-get install valgrind xfslibs-dev
+apt-get install libnfs-dev libiscsi-dev
 
 #curl -fsSL https://get.docker.com | sh
 #apt-get remove -y docker docker-engine docker.io containerd runc
