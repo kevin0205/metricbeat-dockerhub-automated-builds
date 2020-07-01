@@ -21,9 +21,8 @@ qemu-aarch64-static --version
 sudo apt-get install -y binfmt-support
 update-binfmts --version
 
-apt-get install -y kmod klibc-utils
-modinfo /lib/modules/4.4.0-1060-aws/kernel/fs/binfmt_misc.ko
-insmod /lib/modules/4.4.0-1060-aws/kernel/fs/binfmt_misc.ko
+cat /usr/bin/qemu-arm
+sh /usr/bin/qemu-arm
 
 #curl -fsSL https://get.docker.com | sh
 #apt-get remove -y docker docker-engine docker.io containerd runc
