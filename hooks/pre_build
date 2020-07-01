@@ -14,9 +14,9 @@ export TARGET_VERSION=7.5.2
 #apt-get upgrade -y
 apt-get install -y wget sudo
 
-apt purge -y --auto-remove qemu-user qemu-user-binfmt binfmt-support
-apt install -y qemu-user
-service binfmt-support status
+
+service status binfmt-support
+service status systemd-binfmt.service
 
 #curl -fsSL https://get.docker.com | sh
 #apt-get remove -y docker docker-engine docker.io containerd runc
