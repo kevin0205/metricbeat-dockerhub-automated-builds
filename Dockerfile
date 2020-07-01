@@ -1,7 +1,8 @@
 # Base
 #FROM alpine:latest AS base
 # Use Docker Buildx
-FROM --platform=$TARGETPLATFORM alpine:latest AS base
+#FROM --platform=$TARGETPLATFORM alpine:latest AS base
+FROM --platform=$BUILDPLATFORM alpine:latest AS base
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 ARG VERSION
@@ -15,7 +16,8 @@ RUN set -ex; \
 # Builder
 #FROM golang:latest AS builder
 # Use Docker Buildx
-FROM --platform=$TARGETPLATFORM golang:latest AS builder
+#FROM --platform=$TARGETPLATFORM golang:latest AS builder
+FROM --platform=$BUILDPLATFORM golang:latest AS builder
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 ARG VERSION
@@ -51,7 +53,8 @@ RUN git fetch && \
 # Prod 
 #FROM ubuntu:focal
 # Use Docker Buildx
-FROM --platform=$TARGETPLATFORM ubuntu:focal
+#FROM --platform=$TARGETPLATFORM ubuntu:focal
+FROM --platform=$BUILDPLATFORM ubuntu:focal
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 ARG VERSION
