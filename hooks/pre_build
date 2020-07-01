@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #env DOCKER_CLI_EXPERIMENTAL=enabled
-env DOCKER_BUILDKIT=1
 env DOCKER_REPO=kevin0205/metricbeat
 env TARGET_ARCH=linux/amd64,linux/arm64
 env TARGET_VERSION=7.5.2
@@ -51,6 +50,8 @@ docker buildx create --use --name xbuilder
 # Check Version
 docker version
 #docker buildx version
-ls -al /proc/sys/fs/binfmt_misc/
+#ls -al /proc/sys/fs/binfmt_misc/
+ls -al /proc/sys/fs/
+
 docker buildx inspect xbuilder --bootstrap
 docker buildx ls
