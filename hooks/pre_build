@@ -48,6 +48,7 @@ service docker restart
 #docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 # Ubuntu 16.04.6 LTS (Xenial Xerus) / Kernel Version: 4.4.0-1060-aws
 #docker run --rm --privileged multiarch/qemu-user-static:register --reset
+apt-get install --assume-yes apt-utils
 apt-get install -y qemu-user-static
 
 docker buildx create --use --name xbuilder
