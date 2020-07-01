@@ -11,7 +11,7 @@ apt-get install wget sudo
 
 #curl -fsSL https://get.docker.com | sh
 #apt-get remove -y docker docker-engine docker.io containerd runc
-apt-get purge docker-ce docker-ce-cli containerd.io
+apt-get purge -y docker-ce docker-ce-cli containerd.io
 rm -rf /var/lib/docker
 apt-get install -y \
     apt-transport-https \
