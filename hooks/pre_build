@@ -13,19 +13,9 @@ export TARGET_VERSION=7.5.2
 #apt-get update -y
 #apt-get upgrade -y
 apt-get install -y wget sudo
-sudo apt-get install -y qemu-user-static
-ls -al /proc/sys/fs/binfmt_misc/
-ls -al /usr/bin/qemu-*
-qemu-aarch64-static --version
 
-sudo apt-get install -y binfmt-support
-update-binfmts --version
-
-cat /usr/bin/qemu-arm-static
-sh /usr/bin/qemu-arm-static
-
-mount -t binfmt_misc binfmt_misc /proc/sys/fs/binfmt_misc
-echo ":$name:$type:$offset:$magic:$mask:$interpreter:$flags" > /proc/sys/fs/binfmt_misc/register
+sudo mount -t binfmt_misc binfmt_misc /proc/sys/fs/binfmt_misc
+sudo echo ":$name:$type:$offset:$magic:$mask:$interpreter:$flags" > /proc/sys/fs/binfmt_misc/register
 docker run --rm --privileged multiarch/qemu-user-static --reset
 ls -al /proc/sys/fs/binfmt_misc/
 
