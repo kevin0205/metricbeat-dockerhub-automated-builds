@@ -5,8 +5,9 @@ env DOCKER_REPO=kevin0205/metricbeat
 env TARGET_ARCH=linux/amd64,linux/arm64
 env TARGET_VERSION=7.5.2
 
-apt-get update
-apt-get install wget sudo
+apt-get update -y
+apt-get install -y wget sudo
+apt-get install -y qemu-user-static binfmt-support
 
 #curl -fsSL https://get.docker.com | sh
 #apt-get remove -y docker docker-engine docker.io containerd runc
@@ -50,8 +51,7 @@ docker buildx create --use --name xbuilder
 # Check Version
 docker version
 #docker buildx version
-#ls -al /proc/sys/fs/binfmt_misc/
-ls -al /proc/sys/fs/
+ls -al /proc/sys/fs/binfmt_misc/
 
 docker buildx inspect xbuilder --bootstrap
 docker buildx ls
