@@ -13,6 +13,7 @@ export TARGET_VERSION=7.5.2
 #apt-get update -y
 #apt-get upgrade -y
 apt-get install -y wget sudo
+apt-get install -y --assume-yes apt-utils
 
 
 git clone https://github.com/computermouth/qemu-static-conf.git
