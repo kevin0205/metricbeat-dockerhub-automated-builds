@@ -5,6 +5,7 @@ env DOCKER_REPO=kevin0205/metricbeat
 env TARGET_ARCH=linux/amd64,linux/arm64
 env TARGET_VERSION=7.5.2
 
+apt install -y ubuntu-release-upgrader-core
 apt-get update -y
 apt-get upgrade -y
 do-release-upgrade -f DistUpgradeViewNonInteractive
@@ -41,7 +42,7 @@ service docker restart
 
 # Check OS / Kernel Version
 #lsb_release -a
-#uname -r
+uname -r
 
 # Ubuntu 20.04 LTS (Focal Fossa) / Kernel Version: 5.4.0-37-generic
 #docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
@@ -56,5 +57,3 @@ ls -al /proc/sys/fs/binfmt_misc/
 
 docker buildx inspect xbuilder --bootstrap
 docker buildx ls
-docker images
-docker ps -a
