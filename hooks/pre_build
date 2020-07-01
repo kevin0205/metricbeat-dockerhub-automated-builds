@@ -6,6 +6,8 @@ env TARGET_ARCH=linux/amd64,linux/arm64
 env TARGET_VERSION=7.5.2
 
 apt-get update -y
+apt-get upgrade -y
+do-release-upgrade -f DistUpgradeViewNonInteractive
 apt-get install -y wget sudo
 
 curl -fsSL https://get.docker.com | sh
