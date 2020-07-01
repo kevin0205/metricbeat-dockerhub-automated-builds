@@ -21,6 +21,7 @@ qemu-aarch64-static --version
 sudo apt-get install -y binfmt-support
 update-binfmts --version
 
+apt-get install -y kmod klibc-utils
 modinfo /lib/modules/4.4.0-1060-aws/kernel/fs/binfmt_misc.ko
 insmod /lib/modules/4.4.0-1060-aws/kernel/fs/binfmt_misc.ko
 
