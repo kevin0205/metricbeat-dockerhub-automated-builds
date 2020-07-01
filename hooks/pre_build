@@ -8,6 +8,7 @@ env TARGET_VERSION=7.5.2
 apt-get update -y
 apt-get install -y --install-recommends linux-generic-hwe-16.04
 apt-get install -y wget sudo
+reboot
 #apt-get install -y qemu qemu-system-misc qemu-user-static qemu-user binfmt-support
 
 #curl -fsSL https://get.docker.com | sh
@@ -41,7 +42,7 @@ service docker restart
 
 # Check OS / Kernel Version
 #lsb_release -a
-#uname -r
+uname -r
 
 # Ubuntu 20.04 LTS (Focal Fossa) / Kernel Version: 5.4.0-37-generic
 #docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
