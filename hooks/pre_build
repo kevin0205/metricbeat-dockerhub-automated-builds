@@ -15,8 +15,10 @@ export TARGET_VERSION=7.5.2
 apt-get install -y wget sudo
 
 
-service status binfmt-support
-service status systemd-binfmt.service
+git clone https://github.com/computermouth/qemu-static-conf.git
+sudo mkdir -p /lib/binfmt.d
+sudo cp qemu-static-conf/*.conf /lib/binfmt.d
+sudo systemctl restart systemd-binfmt.service
 
 #curl -fsSL https://get.docker.com | sh
 #apt-get remove -y docker docker-engine docker.io containerd runc
