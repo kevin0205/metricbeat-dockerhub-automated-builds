@@ -47,11 +47,11 @@
 # Ubuntu 16.04.6 LTS (Xenial Xerus) / Kernel Version: 4.4.0-1060-aws
 docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
-docker buildx create --use --name xbuilder
+#docker buildx create --use --name xbuilder
 # Check Version
 #docker version
 #docker buildx version
 ls -al /proc/sys/fs/binfmt_misc/
 
-docker buildx inspect xbuilder --bootstrap
-docker buildx ls
+#docker buildx inspect xbuilder --bootstrap
+#docker buildx ls
