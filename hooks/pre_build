@@ -14,10 +14,9 @@ export TARGET_VERSION=7.5.2
 #apt-get upgrade -y
 apt-get install -y wget sudo
 
-sudo mount -t binfmt_misc binfmt_misc /proc/sys/fs/binfmt_misc
-sudo echo ":$name:$type:$offset:$magic:$mask:$interpreter:$flags" > /proc/sys/fs/binfmt_misc/register
-docker run --rm --privileged multiarch/qemu-user-static --reset
-ls -al /proc/sys/fs/binfmt_misc/
+apt purge -y --auto-remove qemu-user qemu-user-binfmt binfmt-support
+apt install -y qemu-user
+service binfmt-support status
 
 #curl -fsSL https://get.docker.com | sh
 #apt-get remove -y docker docker-engine docker.io containerd runc
@@ -64,7 +63,5 @@ docker buildx ls
 # Check Version
 docker version
 docker buildx version
-#ls -al /proc/sys/fs/binfmt_misc/
-#ls -al /usr/bin/qemu-aarch64-static
-#qemu-aarch64-static --version
+ls -al /proc/sys/fs/binfmt_misc/
 #update-binfmts --version
