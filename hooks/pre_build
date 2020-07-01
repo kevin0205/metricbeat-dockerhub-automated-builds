@@ -6,13 +6,13 @@ env DOCKER_REPO=kevin0205/metricbeat
 env TARGET_ARCH=linux/amd64
 env TARGET_VERSION=7.5.2
 
-#sleep 120
-#apt install -y ubuntu-release-upgrader-core
-#apt-get update -y
-#apt-get upgrade -y
+apt-get install -y update-manager-core
+apt-get install -y ubuntu-release-upgrader-core
+apt-get update -y
+apt-get upgrade -y
 #do-release-upgrade -c
 #do-release-upgrade -d
-#do-release-upgrade -f DistUpgradeViewNonInteractive
+do-release-upgrade -f DistUpgradeViewNonInteractive
 apt-get install -y wget sudo
 
 curl -fsSL https://get.docker.com | sh
@@ -52,8 +52,6 @@ echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
 #docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 # Ubuntu 16.04.6 LTS (Xenial Xerus) / Kernel Version: 4.4.0-1060-aws
 docker run --rm --privileged multiarch/qemu-user-static:register --reset
-docker run --rm -t arm64v8/ubuntu uname -m
-docker run --rm -t i386/ubuntu uname -m
 
 docker buildx create --use --name xbuilder
 # Check Version
