@@ -7,7 +7,7 @@ Test DockerHub Automated Builds：Failure
 5. Build Multi Architecture Docker Image (amd64 / arm64)  
 6. Auto Push DockerHub  
 
-# Build Server Info (Check OS / Kernel Version)
+# DockerHub Automated Builds Hosted Runners (Build system information)
 # Cloud Instance
     AWS EC2
 
