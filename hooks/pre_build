@@ -16,10 +16,11 @@ apt-get install -y wget sudo
 apt-get install --assume-yes apt-utils
 
 git clone https://github.com/computermouth/qemu-static-conf.git
-sudo mkdir -p /lib/binfmt.d
-sudo cp qemu-static-conf/*.conf /lib/binfmt.d
-sudo systemctl restart systemd-binfmt.service
+mkdir -p /lib/binfmt.d
+cp qemu-static-conf/*.conf /lib/binfmt.d
+service systemd-binfmt.service restart
 
+# Install Docker
 #curl -fsSL https://get.docker.com | sh
 #apt-get remove -y docker docker-engine docker.io containerd runc
 #apt-get install -y \
@@ -49,21 +50,18 @@ chmod 0750 $HOME/.docker/cli-plugins/docker-buildx
 #echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
 #service docker restart
 
-# Check OS / Kernel Version
-#lsb_release -a
-#uname -r
-
+# Install QEMU
 # Ubuntu 20.04 LTS (Focal Fossa) / Kernel Version: 5.4.0-37-generic
 #docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 # Ubuntu 16.04.6 LTS (Xenial Xerus) / Kernel Version: 4.4.0-1060-aws
-#docker run --rm --privileged multiarch/qemu-user-static:register --reset
-
+docker run --rm --privileged multiarch/qemu-user-static:register --reset
 docker buildx create --use --name xbuilder
-docker buildx inspect xbuilder --bootstrap
-docker buildx ls
 
 # Check Version
+lsb_release -a
+uname -r
 docker version
 docker buildx version
 ls -al /proc/sys/fs/binfmt_misc/
-#update-binfmts --version
+docker buildx inspect xbuilder --bootstrap
+docker buildx ls
