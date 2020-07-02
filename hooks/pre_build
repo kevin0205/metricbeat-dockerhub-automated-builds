@@ -15,7 +15,7 @@ export TARGET_VERSION=7.5.2
 apt-get install -y wget sudo
 
 # Install Docker
-curl -fsSL https://get.docker.com | sh
+curl -fsSL https://get.docker.com | sudo sh
 #apt-get remove -y docker docker-engine docker.io containerd runc
 #apt-get install -y \
 #    apt-transport-https \
