@@ -29,6 +29,7 @@ sudo add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) \
     stable"
+apt-get update -y
 #apt-cache madison docker-ce
 #apt-cache madison docker-ce-cli
 #apt-cache madison containerd.io
