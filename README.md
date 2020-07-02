@@ -9,7 +9,7 @@ Test DockerHub Automated Builds：Failure
 
 # DockerHub Automated Builds Hosted Runners (Build system information)
 # Cloud Instance
-    AWS EC2
+    Amazon Web Services (AWS) EC2
 
 # Custom Operating System and Version：No
 
