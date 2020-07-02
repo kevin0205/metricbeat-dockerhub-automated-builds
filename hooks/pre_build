@@ -8,7 +8,18 @@ wget -O $HOME/.docker/cli-plugins/docker-buildx https://github.com/docker/buildx
 chmod 0750 $HOME/.docker/cli-plugins/docker-buildx
 echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
 
+curl -L https://github.com/balena-io/qemu/releases/download/v3.0.0%2Bresin/qemu-3.0.0+resin-arm.tar.gz | tar zxvf - -C . && mv qemu-3.0.0+resin-arm/qemu-arm-static .
+
 # Register qemu-*-static for all supported processors except the 
 # current one, but also remove all registered binfmt_misc before
 docker run --rm --privileged multiarch/qemu-user-static:register --reset
 docker buildx create --use --name xbuilder
+
+# Check Version
+lsb_release -a
+uname -r
+docker version
+docker buildx version
+ls -al /proc/sys/fs/binfmt_misc/
+docker buildx inspect xbuilder --bootstrap
+docker buildx ls
