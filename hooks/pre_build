@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apt-get install -y wget sudo
+
 # Install Docker Buildx
 mkdir -p $HOME/.docker/cli-plugins
 wget -O $HOME/.docker/cli-plugins/docker-buildx https://github.com/docker/buildx/releases/download/v0.4.1/buildx-v0.4.1.linux-amd64
