@@ -1,14 +1,14 @@
 #!/bin/bash
 
-env DOCKER_CLI_EXPERIMENTAL=enabled
-env DOCKER_REPO=kevin0205/metricbeat
-env TARGET_ARCH=linux/amd64,linux/arm64
-env TARGET_VERSION=7.5.2
+#env DOCKER_CLI_EXPERIMENTAL=enabled
+#env DOCKER_REPO=kevin0205/metricbeat
+#env TARGET_ARCH=linux/amd64,linux/arm64
+#env TARGET_VERSION=7.5.2
 
-#export DOCKER_CLI_EXPERIMENTAL=enabled
-#export DOCKER_REPO=kevin0205/metricbeat
-#export TARGET_ARCH=linux/amd64,linux/arm64
-#export TARGET_VERSION=7.5.2
+export DOCKER_CLI_EXPERIMENTAL=enabled
+export DOCKER_REPO=kevin0205/metricbeat
+export TARGET_ARCH=linux/amd64,linux/arm64
+export TARGET_VERSION=7.5.2
 
 #apt-get update -y
 #apt-get upgrade -y
