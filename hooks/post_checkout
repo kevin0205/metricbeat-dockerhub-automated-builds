@@ -1,0 +1,4 @@
+#!/bin/bash
+
+apt-get update
+apt-get install -y qemu-user-static qemu qemu-user binfmt-support
