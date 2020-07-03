@@ -49,12 +49,3 @@ echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
 # Ubuntu 16.04.6 LTS (Xenial Xerus) / Kernel Version: 4.4.0-1060-aws
 docker run --rm --privileged multiarch/qemu-user-static:register --reset
 docker buildx create --use --name xbuilder
-
-# Check Version
-lsb_release -a
-uname -r
-docker version
-docker buildx version
-ls -al /proc/sys/fs/binfmt_misc/
-docker buildx inspect xbuilder --bootstrap
-docker buildx ls
