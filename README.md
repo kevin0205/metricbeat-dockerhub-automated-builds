@@ -55,3 +55,25 @@ Test DockerHub Automated Builds：Failure
 
 # docker buildx version
     github.com/docker/buildx v0.4.1 bda4882a65349ca359216b135896bddc1d92461c
+
+# Cause of failure (Nothing linux/arm64)
+    # ls -al /proc/sys/fs/binfmt_misc/
+    total 0
+    dr-xr-xr-x 2 root root 0 Jul 3 08:16 .
+    dr-xr-xr-x 1 root root 0 Jul 3 08:16 ..
+
+    # docker buildx inspect xbuilder --bootstrap
+    Name: xbuilder
+    Driver: docker-container
+    Nodes:
+    Name: xbuilder0
+    Endpoint: unix:///var/run/docker.sock
+    Status: running
+    Platforms: linux/amd64, linux/386
+
+    # docker buildx ls
+    NAME/NODE DRIVER/ENDPOINT STATUS PLATFORMS
+    xbuilder * docker-container
+    xbuilder0 unix:///var/run/docker.sock running linux/amd64, linux/386
+    default docker
+    default default running linux/amd64, linux/386
