@@ -73,9 +73,9 @@ docker buildx ls
 #TAG="${TARGET_VERSION:-latest}"
 docker buildx build \
     --progress plain \
-    --platform=linux/amd64,linux/arm64 \
+    --platform=linux/amd64 \
     --build-arg VERSION=7.5.2 \
     -t kevin0205/metricbeat:7.5.2 \
     -t kevin0205/metricbeat \
-    --push \
+    --quiet \
     .
