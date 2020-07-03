@@ -8,7 +8,7 @@
 apt-get install -y wget sudo
 
 # Install Docker
-#curl -fsSL https://get.docker.com | sudo sh
+curl -fsSL https://get.docker.com | sudo sh
 
 # Install Docker
 #sudo apt-get remove -y docker docker-engine docker.io containerd runc
@@ -31,7 +31,7 @@ apt-get install -y wget sudo
 #sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 #sudo apt-get install -y docker-ce-cli=5:19.03.12~3-0~ubuntu-$(lsb_release -cs) docker-ce=5:19.03.12~3-0~ubuntu-$(lsb_release -cs) containerd.io=1.2.13-2
 
-#sudo service docker restart
+sudo service docker restart
 
 # Install Docker Buildx
 mkdir -p $HOME/.docker/cli-plugins
