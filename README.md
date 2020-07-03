@@ -57,7 +57,8 @@ Test DockerHub Automated Builds：Failure
     github.com/docker/buildx v0.4.1 bda4882a65349ca359216b135896bddc1d92461c
 
 # Cause of failure：Nothing linux/arm64
-binfmt_misc / qemu-user-static (Docker Images Setup) [Not Support：setup no effect]
+binfmt_misc / qemu-user-static (Docker Images Setup) [Not Support：setup no effect]  
+
     # ls -al /proc/sys/fs/binfmt_misc/
     total 0
     dr-xr-xr-x 2 root root 0 Jul 3 08:16 .
