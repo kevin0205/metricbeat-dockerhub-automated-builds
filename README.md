@@ -80,4 +80,14 @@ binfmt_misc / qemu-user-static (Docker Images Setup) [Not Support：setup no eff
     default docker
     default default running linux/amd64, linux/386
 
-# failed to solve: rpc error: code = Unknown desc = failed to load LLB: runtime execution on platform linux/arm64 not supported
+    #echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /dev/null
+    #TAG="${TARGET_VERSION:-latest}"
+    # docker buildx build \
+          --progress plain \
+          --platform=linux/amd64,linux/arm64 \
+          --build-arg VERSION=7.5.2 \
+          -t kevin0205/metricbeat:7.5.2 \
+          -t kevin0205/metricbeat \
+          --push \
+          .
+    failed to solve: rpc error: code = Unknown desc = failed to load LLB: runtime execution on platform linux/arm64 not supported
