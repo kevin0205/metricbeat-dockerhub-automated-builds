@@ -79,3 +79,5 @@ binfmt_misc / qemu-user-static (Docker Images Setup) [Not Support：setup no eff
     xbuilder0 unix:///var/run/docker.sock running linux/amd64, linux/386
     default docker
     default default running linux/amd64, linux/386
+
+# failed to solve: rpc error: code = Unknown desc = failed to load LLB: runtime execution on platform linux/arm64 not supported
