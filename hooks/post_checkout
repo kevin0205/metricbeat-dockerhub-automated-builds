@@ -1,4 +1,7 @@
 #!/bin/bash
 
 apt-get update
-apt-get install -y qemu-user-static qemu qemu-user binfmt-support
+apt-get install -y qemu-user-static qemu qemu-user binfmt-support apt-utils wget sudo
+
+curl -fsSL https://get.docker.com | sudo sh
+sudo service docker restart
