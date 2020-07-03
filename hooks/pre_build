@@ -69,7 +69,7 @@ docker buildx ls
 #    --push \
 #    .
 
-#echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /dev/null
+echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /dev/null
 #TAG="${TARGET_VERSION:-latest}"
 docker buildx build \
     --progress plain \
