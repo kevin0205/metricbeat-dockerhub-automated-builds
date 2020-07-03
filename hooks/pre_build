@@ -68,3 +68,14 @@ docker buildx ls
 #    -t $DOCKER_REPO \
 #    --push \
 #    .
+
+#echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /dev/null
+#TAG="${TARGET_VERSION:-latest}"
+docker buildx build \
+    --progress plain \
+    --platform=linux/amd64 \
+    --build-arg VERSION=7.5.2 \
+    -t kevin0205/metricbeat:7.5.2 \
+    -t kevin0205/metricbeat \
+    --push \
+    .
