@@ -7,5 +7,7 @@ echo $DOCKER_PASSWORD
 docker buildx build \
     --platform=linux/amd64 \
     -t kevin0205/metricbeat \
-    --push \
+    --load \
     .
+docker tag kevin0205 kevin0205/metricbeat
+docker push kevin0205/metricbeat
