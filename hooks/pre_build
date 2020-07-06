@@ -80,7 +80,9 @@ docker buildx ls
 #    --output=type=registry \
 #    .
 
-#echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /dev/null
+echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /dev/null
+echo $DOCKER_USERNAME
+echo $DOCKER_PASSWORD
 #TAG="${TARGET_VERSION:-latest}"
 docker buildx build \
     --progress plain \
