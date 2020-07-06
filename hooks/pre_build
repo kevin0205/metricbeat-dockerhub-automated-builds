@@ -79,16 +79,3 @@ docker buildx ls
 #    -t kevin0205/metricbeat \
 #    --output=type=registry \
 #    .
-
-echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /dev/null
-echo $DOCKER_USERNAME
-echo $DOCKER_PASSWORD
-#TAG="${TARGET_VERSION:-latest}"
-docker buildx build \
-    --progress plain \
-    --platform=linux/amd64 \
-    --build-arg VERSION=7.5.2 \
-    -t kevin0205/metricbeat:7.5.2 \
-    -t kevin0205/metricbeat \
-    --output type=image,name=kevin0205/metricbeat:7.5.2,push=true \
-    .
