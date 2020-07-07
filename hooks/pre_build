@@ -1,9 +1,9 @@
 #!/bin/bash
 
-env DOCKER_CLI_EXPERIMENTAL=enabled
-env DOCKER_REPO=kevin0205/metricbeat
-env TARGET_ARCH=linux/amd64,linux/arm64
-env TARGET_VERSION=7.5.2
+#env DOCKER_CLI_EXPERIMENTAL=enabled
+#env DOCKER_REPO=kevin0205/metricbeat
+#env TARGET_ARCH=linux/amd64,linux/arm64
+#env TARGET_VERSION=7.5.2
 
 apt-get install -y wget sudo
 
