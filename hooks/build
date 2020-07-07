@@ -8,7 +8,7 @@
 #export DOCKER_CLI_EXPERIMENTAL=enabled
 export DOCKER_REPO=kevin0205/metricbeat
 #export TARGET_ARCH=linux/amd64,linux/arm64
-export TARGET_ARCH=linux/amd64
+export TARGET_ARCH=linux/amd64,linux/386
 export TARGET_VERSION=7.5.2
 
 echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /dev/null
