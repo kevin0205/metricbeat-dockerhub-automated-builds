@@ -4,11 +4,11 @@ echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /de
 #TAG="${TARGET_VERSION:-latest}"
 docker buildx build \
     --progress plain \
-    --platform=linux/amd64,linux/arm64 \
-    --build-arg VERSION=7.5.2 \
-    -t kevin0205/metricbeat:7.5.2 \
-    -t kevin0205/metricbeat \
+    --platform=$TARGET_ARCH \
+    --build-arg VERSION=$TARGET_VERSION \
+    -t $DOCKER_REPO:$TAG \
+    -t $DOCKER_REPO \
     --load \
     .
-docker tag kevin0205 kevin0205/metricbeat
-docker push kevin0205/metricbeat
+docker tag kevin0205 $DOCKER_REPO
+docker push $DOCKER_REPO
