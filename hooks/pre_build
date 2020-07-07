@@ -45,9 +45,9 @@ echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
 
 # Install QEMU
 # Ubuntu 16.04.6 LTS (Xenial Xerus) / Kernel Version: 4.4.0-1060-aws
-#docker run --rm --privileged multiarch/qemu-user-static:register --reset
+docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
-#docker buildx create --use --name xbuilder
+docker buildx create --use --name xbuilder
 
 # Check Version
 #lsb_release -a
