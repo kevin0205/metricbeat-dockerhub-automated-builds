@@ -5,6 +5,10 @@ env DOCKER_REPO=kevin0205/metricbeat
 env TARGET_ARCH=linux/amd64
 env TARGET_VERSION=7.5.2
 
+echo $DOCKER_REPO
+echo $TARGET_ARCH
+echo $TARGET_VERSION
+
 echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /dev/null
 #TAG="${TARGET_VERSION:-latest}"
 docker buildx build \
