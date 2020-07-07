@@ -5,6 +5,7 @@
 docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 docker buildx create --use --name xbuilder
+docker buildx inspect xbuilder --bootstrap
 
 # Check Version
 lsb_release -a
