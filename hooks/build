@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Install QEMU
+# Ubuntu 16.04.6 LTS (Xenial Xerus) / Kernel Version: 4.4.0-1060-aws
+docker run --rm --privileged multiarch/qemu-user-static:register --reset
+
+docker buildx create --use --name xbuilder
+
+#env DOCKER_CLI_EXPERIMENTAL=enabled
+#env DOCKER_REPO=kevin0205/metricbeat
+#env TARGET_ARCH=linux/amd64,linux/arm64
+#env TARGET_VERSION=7.5.2
+
+#export DOCKER_CLI_EXPERIMENTAL=enabled
+export DOCKER_REPO=kevin0205/metricbeat
+export TARGET_ARCH=linux/amd64,linux/arm64
+export TARGET_VERSION=7.5.2
+
+echo $DOCKER_REPO
+echo $TARGET_ARCH
+echo $TARGET_VERSION
+
+echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin &> /dev/null
+#TAG="${TARGET_VERSION:-latest}"
+docker buildx build \
+    --progress plain \
+    --platform=$TARGET_ARCH \
+    --build-arg VERSION=$TARGET_VERSION \
+    -t $DOCKER_REPO:$TARGET_VERSION \
+    -t $DOCKER_REPO \
+    --load \
+    .
+docker tag kevin0205 $DOCKER_REPO
