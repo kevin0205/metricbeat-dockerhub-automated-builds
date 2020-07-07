@@ -5,7 +5,8 @@ echo $DOCKER_USERNAME
 echo $DOCKER_PASSWORD
 #TAG="${TARGET_VERSION:-latest}"
 docker buildx build \
-    --platform=linux/amd64 \
+    --platform=linux/amd64,linux/arm64 \
+    -t kevin0205/metricbeat:7.5.2 \
     -t kevin0205/metricbeat \
     --load \
     .
