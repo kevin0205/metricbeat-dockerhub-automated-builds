@@ -7,13 +7,13 @@
 #docker buildx create --use --name xbuilder
 
 # Check Version
-#lsb_release -a
-#uname -r
-#docker version
-#docker buildx version
-#ls -al /proc/sys/fs/binfmt_misc/
-#docker buildx inspect xbuilder --bootstrap
-#docker buildx ls
+lsb_release -a
+uname -r
+docker version
+docker buildx version
+ls -al /proc/sys/fs/binfmt_misc/
+docker buildx inspect xbuilder --bootstrap
+docker buildx ls
 ###################################################################
 
 #env DOCKER_CLI_EXPERIMENTAL=enabled
